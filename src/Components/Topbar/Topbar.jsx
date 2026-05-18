@@ -16,6 +16,9 @@ const Topbar = () => {
             24/7 Banking Service: +1(234)456-0 <i class="ri-search-line"></i>
           </span>
           <i class="ri-twitter-fill"></i>
+          <i class="ri-facebook-line"></i>
+          <i class="ri-instagram-line"></i>
+          <i class="ri-youtube-line"></i>
         </div>
       </div>
     </div>
