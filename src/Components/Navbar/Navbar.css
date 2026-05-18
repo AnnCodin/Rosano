@@ -12,6 +12,10 @@
   font-size: 14px;
   font-weight: 500;
 }
+.navbar ul li:hover {
+  color: var(--accent);
+  background: #fff5ec;
+}
 .site-logo {
   background: var(--primary);
   padding: 10px 80px 10px 20px;
@@ -20,73 +24,9 @@
 .site-logo img {
   width: 130px;
 }
-/* .navbar.scrolled {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-} */
-/* .navbar-inner {
-  display: flex;
-  align-items: center;
-  padding: 14px 20px;
-  gap: 24px;
-} */
-/* .navbar-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  flex-shrink: 0;
-}
-.brand-logo {
-  width: 38px;
-  height: 38px;
-  background: #1a3c6e;
-  color: #fff;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Playfair Display", serif;
-  font-size: 22px;
-  font-weight: 700;
-}
-.brand-name {
-  font-family: "Playfair Display", serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: #1a3c6e;
-  letter-spacing: 2px;
-} */
-/* .nav-links {
-  display: flex;
-  list-style: none;
-  gap: 6px;
-  margin: 0;
-  flex: 1;
-  justify-content: center;
-}
-.nav-links a {
-  color: #333;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 6px 12px;
-  border-radius: 4px;
-  transition:
-    color 0.2s,
-    background 0.2s;
-}
-.nav-links a:hover {
-  color: #f5821e;
-  background: #fff5ec;
-}
-.navbar-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-} */
 .btn-login {
   background: var(--primary);
-  border: none;
+  border: 0;
   color: #fff;
   padding: 10px 20px;
   border-radius: 3px;
@@ -105,12 +45,11 @@
   margin-left: 5px;
 }
 .btn-login:hover {
-  background: transparent;
-  color: var(--primary);
-  border: 2px solid var(--primary);
+  background: #1a3c6e;
+  color: #fff;
 }
 .btn-nav-primary {
-  background: #f5821e;
+  background: var(--accent);
   color: #fff;
   border: none;
   padding: 10px 20px;

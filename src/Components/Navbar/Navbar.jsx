@@ -5,7 +5,7 @@ import site_logo from "../../assets/rosano-site-logo.png";
 
 const Navbar = () => {
   return (
-    <div className="container navbar">
+    <div className="navbar container">
       <div className="site-logo">
         <Link to="/">
           <img src={site_logo} alt="" />
