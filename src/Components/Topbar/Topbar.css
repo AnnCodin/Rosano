@@ -1,0 +1,35 @@
+.topbar {
+  color: #000000;
+  font-size: 12px;
+  padding: 8px 0;
+}
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.topbar-left {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.topbar-left span,
+.topbar-right span {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.topbar-left span:hover,
+.topbar-right span:hover {
+  color: #f5821e;
+}
+
+@media (max-width: 600px) {
+  .topbar-left {
+    display: none;
+  }
+  .topbar-inner {
+    justify-content: center;
+  }
+}
