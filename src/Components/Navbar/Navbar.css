@@ -1,71 +1,78 @@
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #000;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s;
 }
-.navbar ul li {
-  display: inline-block;
-  padding: 5px 10px;
-  margin: 0 5px;
-  font-weight: 500;
+.navbar.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  gap: 24px;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 6px;
+  margin: 0;
+  flex: 1;
+  justify-content: center;
+}
+.nav-links a.active {
+  color: #d4af37;
+}
+.nav-links a {
+  color: #333;
   font-size: 14px;
   font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition:
+    color 0.2s,
+    background 0.2s;
 }
-.navbar ul li:hover {
-  color: var(--accent);
+.nav-links a:hover {
+  color: #f5821e;
   background: #fff5ec;
 }
-.site-logo {
-  background: var(--primary);
-  padding: 10px 80px 10px 20px;
-  border-right: 6px solid var(--accent);
-}
-.site-logo img {
-  width: 130px;
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
 }
 .btn-login {
-  background: var(--primary);
-  border: 0;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 3px;
+  background: transparent;
+  border: 2px solid #1a3c6e;
+  color: #1a3c6e;
+  padding: 8px 20px;
+  border-radius: 4px;
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 13px;
   cursor: pointer;
   transition: all 0.2s;
-  margin-right: 10px;
-}
-.btn-login i {
-  background: #fff;
-  border-radius: 50%;
-  padding: 1px;
-  color: var(--primary);
-  margin-left: 5px;
 }
 .btn-login:hover {
   background: #1a3c6e;
   color: #fff;
 }
 .btn-nav-primary {
-  background: var(--accent);
+  background: #f5821e;
   color: #fff;
   border: none;
-  padding: 10px 20px;
-  border-radius: 3px;
+  padding: 10px 22px;
+  border-radius: 4px;
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 13px;
   cursor: pointer;
   transition: background 0.2s;
-}
-.btn-nav-primary i {
-  background: #fff;
-  border-radius: 50%;
-  padding: 1px;
-  color: var(--accent);
-  margin-left: 5px;
 }
 .btn-nav-primary:hover {
   background: #d96e10;

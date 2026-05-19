@@ -1,46 +1,57 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
-import { Link, Links, NavLink } from "react-router-dom";
 import site_logo from "../../assets/rosano-site-logo.png";
 
-const Navbar = () => {
-  return (
-    <div className="navbar container">
-      <div className="site-logo">
-        <Link to="/">
-          <img src={site_logo} alt="" />
-        </Link>
-      </div>
+const navLinks = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Services", path: "/services" },
+  { name: "Apply Now", path: "/applynow" },
+  { name: "Blog", path: "/blog" },
+  { name: "Contact", path: "/contact" },
+];
 
-      <ul>
-        <NavLink to="/">
-          <li>Home</li>
-        </NavLink>
-        <NavLink to="/about">
-          <li>About</li>
-        </NavLink>
-        <NavLink to="/services">
-          <li>Services</li>
-        </NavLink>
-        <NavLink to="/applynow">
-          <li>Apply Now</li>
-        </NavLink>
-        <NavLink to="/blog">
-          <li>Blog</li>
-        </NavLink>
-        <NavLink to="/contact">
-          <li>Contact</li>
-        </NavLink>
-      </ul>
-      <div className="nav-btns">
-        <button className="btn-login">
-          Login <i class="ri-arrow-right-fill"></i>
+const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handler);
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
+
+  return (
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+      <div className="container navbar-inner">
+        <div className="navbar-brand">
+          <img src={site_logo} alt="" width="130px" />
+        </div>
+        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          <span />
+          <span />
+          <span />
         </button>
-        <button className="btn-nav-primary">
-          Open An Account <i class="ri-arrow-right-fill"></i>
-        </button>
+        <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+          {navLinks.map((link) => (
+            <li key={link.name}>
+              <NavLink
+                to={link.path}
+                onClick={() => setMenuOpen(false)}
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                {link.name}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+        <div className="navbar-actions">
+          <button className="btn-login">Log In</button>
+          <button className="btn-nav-primary">Open Account</button>
+        </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

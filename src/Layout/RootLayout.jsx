@@ -9,6 +9,11 @@ const RootLayout = () => {
     <div>
       <Topbar />
       <Navbar />
+
+      <main>
+        <Outlet />
+      </main>
+
       <Footer />
     </div>
   );
