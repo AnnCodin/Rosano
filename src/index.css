@@ -254,3 +254,29 @@ img {
 }
 
 /* --- Ticker Bar --- */
+.ticker-bar {
+  background: #0d1b2a;
+  overflow: hidden;
+  padding: 10px 0;
+  white-space: nowrap;
+}
+.ticker-track {
+  display: inline-flex;
+  gap: 50px;
+  animation: ticker 30s linear infinite;
+}
+.ticker-item {
+  color: #aab8cc;
+  font-size: 13px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+/* --- Ticker Bar --- */
