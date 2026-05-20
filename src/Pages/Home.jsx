@@ -83,6 +83,102 @@ function formatCurrency(n) {
   return "$" + Math.round(n).toLocaleString();
 }
 
+const GearIcon = () => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.6"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <circle cx="12" cy="12" r="3" />
+    <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+  </svg>
+);
+
+const WalletIcon = () => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.6"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect x="2" y="7" width="20" height="14" rx="2" />
+    <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+    <circle cx="16" cy="14" r="1" />
+  </svg>
+);
+
+const CoinsIcon = () => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.6"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <circle cx="9" cy="11" r="4" />
+    <path d="M14.12 5.88A4 4 0 1119 13" />
+    <path d="M5 20h8" />
+    <path d="M9 15v5" />
+  </svg>
+);
+
+const ShoppingBagIcon = () => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.6"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+    <line x1="3" y1="6" x2="21" y2="6" />
+    <path d="M16 10a4 4 0 01-8 0" />
+  </svg>
+);
+
+const loanCards = [
+  {
+    title: "Loan For Students",
+    desc: "Dolor amety consectetur vulputa adipis elit mil. Nunc libero et velit interdum venium aliquet odio typesm",
+    img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80",
+  },
+  {
+    title: "Loan For Home",
+    desc: "Dolor amety consectetur vulputa adipis elit mil. Nunc libero et velit interdum venium aliquet odio typesm",
+    img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
+  },
+  {
+    title: "Loan For Business",
+    desc: "Dolor amety consectetur vulputa adipis elit mil. Nunc libero et velit interdum venium aliquet odio typesm",
+    img: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&q=80",
+  },
+];
+
+const features = [
+  {
+    icon: <WalletIcon />,
+    title: "Pay For Necessities",
+    desc: "Nunc vulputate libero velit interdum",
+  },
+  {
+    icon: <CoinsIcon />,
+    title: "Pay For Necessities",
+    desc: "Nunc vulputate libero velit interdum",
+  },
+  {
+    icon: <ShoppingBagIcon />,
+    title: "Pay For online shoppings",
+    desc: "Nunc vulputate libero velit interdum",
+  },
+];
+
 const Home = () => {
   const [active, setActive] = useState(0);
 
@@ -419,6 +515,146 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/*Loans */}
+      <div className="banking-wrapper">
+        <section className="loans-section">
+          <div className="loans-eyebrow">We Offer Banking For Everyone</div>
+          <h2 className="loans-title">Loans &amp; Finances</h2>
+          <p className="loans-subtitle">
+            Blandit vel ultrices. Mattis accumsan egestas pulvinar
+          </p>
+
+          <div className="cards-grid">
+            {loanCards.map((card) => (
+              <div className="loan-card" key={card.title}>
+                <img
+                  className="loan-card-img"
+                  src={card.img}
+                  alt={card.title}
+                  loading="lazy"
+                />
+                <div className="loan-card-body">
+                  <h3 className="loan-card-title">{card.title}</h3>
+                  <p className="loan-card-desc">{card.desc}</p>
+                  <button className="btn-apply">
+                    Apply Today <GearIcon />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* BANKING CARD SECTION */}
+        <section className="card-section">
+          <div className="card-section-img-wrap">
+            <img
+              className="card-section-img"
+              src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80"
+              alt="Banking presentation"
+              loading="lazy"
+            />
+            <div className="credit-card-badge">
+              <svg
+                width="54"
+                height="36"
+                viewBox="0 0 54 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="54" height="36" rx="5" fill="url(#cardGrad)" />
+                {/* Magnetic stripe */}
+                <rect
+                  x="0"
+                  y="9"
+                  width="54"
+                  height="7"
+                  fill="rgba(0,0,0,0.45)"
+                />
+                {/* Chip */}
+                <rect
+                  x="5"
+                  y="20"
+                  width="10"
+                  height="8"
+                  rx="1.5"
+                  fill="#d4a843"
+                />
+                <line
+                  x1="10"
+                  y1="20"
+                  x2="10"
+                  y2="28"
+                  stroke="#b8922a"
+                  strokeWidth="0.8"
+                />
+                <line
+                  x1="5"
+                  y1="24"
+                  x2="15"
+                  y2="24"
+                  stroke="#b8922a"
+                  strokeWidth="0.8"
+                />
+                {/* Visa text */}
+                <text
+                  x="27"
+                  y="31"
+                  textAnchor="middle"
+                  fill="white"
+                  fontSize="9"
+                  fontWeight="bold"
+                  fontFamily="Arial, sans-serif"
+                  letterSpacing="1"
+                >
+                  VISA
+                </text>
+                {/* Overlapping circles (Mastercard-style) */}
+                <circle cx="41" cy="25" r="5" fill="#eb001b" opacity="0.9" />
+                <circle cx="48" cy="25" r="5" fill="#f79e1b" opacity="0.9" />
+                <defs>
+                  <linearGradient
+                    id="cardGrad"
+                    x1="0"
+                    y1="0"
+                    x2="54"
+                    y2="36"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop offset="0%" stopColor="#1a3a6b" />
+                    <stop offset="100%" stopColor="#0d2244" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+
+          <div className="card-section-content">
+            <div className="section-eyebrow">Banking Cards &amp; Finances</div>
+            <h2 className="section-heading">
+              Get your personalized banking card now
+            </h2>
+            <p className="section-body">
+              Lorem ipsum dolor sit amet, consectetur adipisc elit. Nunctimi
+              vulput velit interdum, ac aliquet odio mattis. Classesicop aptent
+              tacitiso ciosqu eptum ostrio antario glosses.
+            </p>
+
+            <div className="features-list">
+              {features.map((f, i) => (
+                <div className="feature-item" key={i}>
+                  <div className="feature-icon">{f.icon}</div>
+                  <div className="feature-text">
+                    <h4>{f.title}</h4>
+                    <p>{f.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

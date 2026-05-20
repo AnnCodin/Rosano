@@ -834,8 +834,6 @@ img {
   gap: 48px;
   flex-wrap: wrap;
 }
-.result-item {
-}
 .result-label {
   font-size: 12px;
   color: #6b7280;
@@ -897,5 +895,332 @@ img {
     width: 58px;
     height: 58px;
     font-size: 22px;
+  }
+}
+
+/* Loans & Finances */
+.banking-wrapper {
+  font-family: "DM Sans", sans-serif;
+  color: #1a1a2e;
+  overflow: hidden;
+}
+
+/* LOANS SECTION */
+.loans-section {
+  position: relative;
+  min-height: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px 80px;
+  background:
+    linear-gradient(rgba(10, 12, 30, 0.72), rgba(10, 12, 30, 0.72)),
+    url("https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1400&q=80")
+      center/cover no-repeat;
+}
+
+.loans-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #f97316;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+}
+
+.loans-eyebrow::before {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 2px;
+  background: #f97316;
+  flex-shrink: 0;
+}
+
+.loans-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.loans-subtitle {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center;
+  margin-bottom: 48px;
+  max-width: 420px;
+}
+
+/* CARDS GRID */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  width: 100%;
+  max-width: 880px;
+}
+
+.loan-card {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e7eb;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.loan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.18);
+  z-index: 2;
+}
+
+.loan-card-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+
+.loan-card-body {
+  padding: 24px 22px 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.loan-card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.loan-card-desc {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: #6b7280;
+  flex: 1;
+  margin-bottom: 22px;
+}
+
+.btn-apply {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border: 1.5px solid #111827;
+  background: transparent;
+  color: #111827;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition:
+    background 0.2s,
+    color 0.2s;
+  width: 100%;
+}
+
+.btn-apply:hover {
+  background: #111827;
+  color: #fff;
+}
+
+.btn-apply svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+/* BANKING CARD SECTION */
+.card-section {
+  background: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 72px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card-section-img-wrap {
+  position: relative;
+  padding-right: 40px;
+}
+
+.card-section-img {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  display: block;
+}
+
+.credit-card-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 16px;
+  background: #fff;
+  border-radius: 50%;
+  width: 78px;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border: 2px solid #e5e7eb;
+}
+
+.card-section-content {
+  padding-left: 20px;
+}
+
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #f97316;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.section-eyebrow::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: #f97316;
+  flex-shrink: 0;
+}
+
+.section-heading {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.22;
+  margin-bottom: 20px;
+}
+
+.section-body {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: #6b7280;
+  margin-bottom: 32px;
+  max-width: 380px;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #374151;
+}
+
+.feature-icon svg {
+  width: 34px;
+  height: 34px;
+}
+
+.feature-text h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 2px;
+}
+
+.feature-text p {
+  font-size: 0.82rem;
+  color: #9ca3af;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .card-section {
+    padding: 60px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .loans-section {
+    padding: 48px 16px 60px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .loan-card + .loan-card {
+    border-top: none;
+  }
+
+  .loan-card-img {
+    aspect-ratio: 16/9;
+  }
+
+  .card-section {
+    grid-template-columns: 1fr;
+    padding: 48px 20px;
+    gap: 36px;
+  }
+
+  .card-section-img-wrap {
+    padding-right: 0;
+  }
+
+  .card-section-img {
+    max-width: 100%;
+    aspect-ratio: 16/10;
+  }
+
+  .card-section-content {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .loans-title {
+    font-size: 1.7rem;
+  }
+  .section-heading {
+    font-size: 1.7rem;
+  }
+  .loan-card-body {
+    padding: 18px 16px 20px;
+  }
+  .card-section {
+    padding: 40px 16px;
   }
 }
