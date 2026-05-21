@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Footer.css";
+import footer_logo from "../../assets/footer-logo.png";
 
 const HexBackground = () => (
   <svg
@@ -44,44 +45,7 @@ const HexBackground = () => (
   </svg>
 );
 
-const LogoIcon = () => (
-  <svg
-    className="rf-logo-icon"
-    viewBox="0 0 52 52"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <polygon
-      points="26,4 46,15 46,37 26,48 6,37 6,15"
-      fill="none"
-      stroke="#f5820a"
-      strokeWidth="2"
-    />
-    <polygon
-      points="26,10 40,18 40,34 26,42 12,34 12,18"
-      fill="none"
-      stroke="#f5820a"
-      strokeWidth="1"
-      opacity="0.5"
-    />
-    <polyline
-      points="14,18 26,26 38,18"
-      stroke="#f5820a"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <line
-      x1="26"
-      y1="26"
-      x2="26"
-      y2="40"
-      stroke="#f5820a"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-    />
-  </svg>
-);
+const LogoIcon = () => <img src={footer_logo} alt="" width="180px" />;
 
 const AppleIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -223,10 +187,6 @@ const Footer = () => {
           <div className="rf-topbar">
             <div className="rf-brand">
               <LogoIcon />
-              <div className="rf-brand-text">
-                <div className="rf-brand-name">ROSANO</div>
-                <div className="rf-brand-sub">Banking For Everyone</div>
-              </div>
             </div>
 
             <p className="rf-tagline">
