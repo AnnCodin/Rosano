@@ -179,6 +179,81 @@ const features = [
   },
 ];
 
+const CalendarIcon = () => (
+  <svg
+    viewBox="0 0 16 16"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    style={{ width: 14, height: 14, color: "#f5820a" }}
+  >
+    <rect x="1.5" y="2.5" width="13" height="12" rx="1.5" />
+    <path d="M1.5 6.5h13M5 1.5v2M11 1.5v2" />
+  </svg>
+);
+
+const CommentIcon = () => (
+  <svg
+    viewBox="0 0 16 16"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    style={{ width: 14, height: 14, color: "#f5820a" }}
+  >
+    <path d="M2 2.5h12a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5H5l-3 2.5V3a.5.5 0 0 1 .5-.5z" />
+  </svg>
+);
+
+const ArrowRight = () => (
+  <svg
+    viewBox="0 0 14 14"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    style={{ width: 13, height: 13 }}
+  >
+    <path d="M2 7h10M8 3l4 4-4 4" />
+  </svg>
+);
+
+const serviceCards = [
+  {
+    title: "Trades FX",
+    desc: "Dolor amety consectetur vulputate adipiscing elit mil. Nunc libero.",
+    photo:
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80",
+  },
+  {
+    title: "Mutual Funds",
+    desc: "Dolor amety consectetur vulputate adipiscing elit mil. Nunc libero.",
+    photo:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80",
+  },
+  {
+    title: "Multi Currency AC's",
+    desc: "Dolor amety consectetur vulputate adipiscing elit mil. Nunc libero.",
+    photo:
+      "https://images.unsplash.com/photo-1560472355-536de3962603?w=600&q=80",
+  },
+];
+
+const newsItems = [
+  {
+    thumb:
+      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=300&q=80",
+    date: "Jan,20,2025",
+    comments: "30 Comments",
+    title: "Never Worry About What To Do About Banking Again With These Tips",
+  },
+  {
+    thumb:
+      "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=300&q=80",
+    date: "Jan,20,2025",
+    comments: "30 Comments",
+    title: "Never Worry About What To Do About Banking Again With These Tips",
+  },
+];
+
 const Home = () => {
   const [active, setActive] = useState(0);
 
@@ -370,7 +445,7 @@ const Home = () => {
         {/* Section header */}
         <div className="section-header">
           <div className="section-eyebrow">We Offer Banking For Everyone</div>
-          <h2 className="section-title">EMI online calculator</h2>
+          <h2 className="section-title">EMI Online Calculator</h2>
           <p className="section-sub">
             Get your loan calculated easily lorem ipsum dolor
           </p>
@@ -651,6 +726,129 @@ const Home = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* Services & News */}
+      <div className="banking-wrapper">
+        {/* ── Services Section ── */}
+        <section className="services-sectionn">
+          <div className="services-bg" />
+          <div className="services-overlay" />
+          <div className="section-inner">
+            <div className="section-tag">
+              <span className="tag-line" />
+              <span className="tag-text">We Offer Banking For Everyone</span>
+            </div>
+            <h2 className="section-heading">Secure your money</h2>
+            <p className="section-sub">
+              Blandit vel varius ultrices. Mattis accumsan egestas pulvinar
+            </p>
+
+            <div className="cards-grid">
+              {serviceCards.map((card, i) => (
+                <div className="service-card" key={i}>
+                  <div
+                    className="card-photo"
+                    style={{ backgroundImage: `url(${card.photo})` }}
+                  />
+                  <div className="card-overlay" />
+                  <div className="card-content">
+                    <span className="card-accent" />
+                    <h3 className="card-title">{card.title}</h3>
+                    <p className="card-desc">{card.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── News Section ── */}
+        <section className="news-section">
+          <div className="section-inner">
+            <div className="section-tag">
+              <span className="tag-line" />
+              <span className="tag-text">We Offer Banking For Everyone</span>
+            </div>
+            <h2 className="section-heading">Our News & Insights</h2>
+            <p className="section-sub">
+              Blandit vel varius ultrices. Mattis accumsan egestas pulvinar
+            </p>
+
+            <div className="news-grid">
+              {/* Featured post */}
+              <div className="news-featured">
+                <div style={{ position: "relative" }}>
+                  <img
+                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+                    alt="Industry news"
+                    className="featured-img"
+                  />
+                  <span className="featured-tag-badge">Current Account</span>
+                </div>
+                <div className="featured-meta">
+                  <span className="meta-item">
+                    <CalendarIcon /> Jan,20,2025
+                  </span>
+                  <span className="meta-item">
+                    <CommentIcon /> 30 Comments
+                  </span>
+                </div>
+
+                <h3 className="featured-title">
+                  Industry's Imperatives For Sustainability…
+                </h3>
+                <button className="more-btn">
+                  More News <ArrowRight />
+                </button>
+              </div>
+
+              {/* News list */}
+              <div className="news-list">
+                {newsItems.map((item, i) => (
+                  <div className="news-item" key={i}>
+                    <img
+                      src={item.thumb}
+                      alt={item.title}
+                      className="news-thumb"
+                    />
+                    <div>
+                      <div className="news-item-meta">
+                        <span className="meta-item">
+                          <CalendarIcon /> {item.date}
+                        </span>
+                        <span className="meta-item">
+                          <CommentIcon /> {item.comments}
+                        </span>
+                      </div>
+                      <h4 className="news-item-title">{item.title}</h4>
+                    </div>
+                  </div>
+                ))}
+                {newsItems.map((item, i) => (
+                  <div className="news-item" key={i}>
+                    <img
+                      src={item.thumb}
+                      alt={item.title}
+                      className="news-thumb"
+                    />
+                    <div>
+                      <div className="news-item-meta">
+                        <span className="meta-item">
+                          <CalendarIcon /> {item.date}
+                        </span>
+                        <span className="meta-item">
+                          <CommentIcon /> {item.comments}
+                        </span>
+                      </div>
+                      <h4 className="news-item-title">{item.title}</h4>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
